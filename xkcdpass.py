@@ -23,12 +23,12 @@ parser.add_option("-l", "--length", dest="password_length",
 
 (options, args) = parser.parse_args()
 
-if options.password_length < 1:
+if int(options.password_length) < 1:
     parser.error("Your password should contain atleast 1 word")
 
 if not os.path.isfile(options.dictionary_path):
     parser.error("I cannot find your dictionary file. Please make sure it is readable.")
 
 with open(options.dictionary_path, "r") as dictionary:
-    print " ".join( map(str.strip, random.sample( dictionary.readlines(), options.password_length )))
+    print " ".join( map(str.strip, random.sample( dictionary.readlines(), int( options.password_length ))))
     
