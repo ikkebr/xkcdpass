@@ -1,10 +1,15 @@
-#!/usr/local/bin/python
+#!/usr/bin/python
 #
 # xkcdpass
 # http://danielmcgraw.github.io/xkcdpass/
 #
+# pyxkcdpass
+# https://github.com/ikkebr/xkcdpass
+#
 # Generate passwords like Randall Munroe (http://xkcd.com/936/)
 # Default dictionary from http://www.englishclub.com/vocabulary/common-words-5000.htm
+#
+
 import os
 import random
 from optparse import OptionParser
