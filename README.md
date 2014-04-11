@@ -6,7 +6,7 @@ This port was inspired by Daniel McGraw's code, available at https://github.com/
 
 ## Install
 
-xkcdpass is a shell script, so drop it and the dictionary in the same place and make sure it's added
+xkcdpass is a python script, so drop it and the dictionary in the same place and make sure it's added
 to your `$PATH`.
 
 ## Usage
