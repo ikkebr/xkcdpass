@@ -22,18 +22,18 @@ parser = OptionParser(usage=usage)
 parser.add_option("-d", "--dictionary", dest="dictionary_path",
                   help="Specify a path to a dictionary", metavar="PATH", default="dictionary")
 
-parser.add_option("-l", "--length", dest="password_length",
+parser.add_option("-l", "--length", dest="password_length", type="int",
                   help="Specify the password length", metavar="LENGTH", default=4)
 
 
 (options, args) = parser.parse_args()
 
-if int(options.password_length) < 1:
+if options.password_length < 1:
     parser.error("Your password should contain atleast 1 word")
 
 if not os.path.isfile(options.dictionary_path):
     parser.error("I cannot find your dictionary file. Please make sure it is readable.")
 
 with open(options.dictionary_path, "r") as dictionary:
-    print " ".join( map(str.strip, random.sample( dictionary.readlines(), int( options.password_length ))))
+    print " ".join( map(str.strip, random.sample( dictionary.readlines(), options.password_length )))
     
