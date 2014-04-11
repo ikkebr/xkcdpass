@@ -13,15 +13,15 @@ to your `$PATH`.
 
 Just run xkcdpass and you will get a random four word password chosen from 5000 common english words.
 
-    xkcdpass.py
+    ./xkcdpass.py
     scary cost couch thigh
 
 You can also specify the number of words you'd like your password to be made of by passing the **-l** or **--length** option.
 
-    xkcdpass.py -l 6
+    ./xkcdpass.py -l 6
     walk office face bloody come controversy
 
 If the you'd rather use a different dictionary, such as your machines word list, by passing the **-d** or **--dictionary** option.
 
-    xkcdpass.py --dictionary=/usr/share/dict/words
+    ./xkcdpass.py --dictionary=/usr/share/dict/words
     cryptographist pseudograph amoebae overwhelmingness
