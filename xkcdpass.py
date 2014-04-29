@@ -19,8 +19,9 @@ usage = "xkcdpass.py [-h|--help] [-l|--length=<length>] [-d|--dictionary=<path>]
 
 parser = OptionParser(usage=usage)
 
+default_dictionary = os.path.join(os.path.dirname(__file__), 'dictionary')
 parser.add_option("-d", "--dictionary", dest="dictionary_path",
-                  help="Specify a path to a dictionary", metavar="PATH", default="dictionary")
+                  help="Specify a path to a dictionary", metavar="PATH", default=default_dictionary)
 
 parser.add_option("-l", "--length", dest="password_length", type="int",
                   help="Specify the password length", metavar="LENGTH", default=4)
