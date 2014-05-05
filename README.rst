@@ -10,6 +10,8 @@ PyXKCDPass
 
 .. image:: https://pypip.in/d/pyxkcdpass/badge.png
         :target: https://pypi.python.org/pypi/pyxkcdpass
+        
+.. image:: https://coveralls.io/repos/ikkebr/pyxkcdpass/badge.png :target: https://coveralls.io/r/ikkebr/pyxkcdpass
 
 
         
