@@ -20,7 +20,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pyxkcdpass',
-    version='0.2.0',
+    version='0.2.1',
     description='This script provides a simple way to generate secure and human readable passwords, based on XKCD #936',
     long_description=readme + '\n\n' + history,
     author='Henrique Pereira',
