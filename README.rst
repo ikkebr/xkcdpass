@@ -28,9 +28,21 @@ This script provides a simple way to generate secure and human readable password
 Install
 --------
 
-* TODO
+Open your terminal and type:
+
+   ** pip install pyxkcdpass
+   
+or 
+   
+   ** easy_install pyxkcdpass
 
 Usage
 --------
 
-* TODO
+Just call pyxckdpass and supply it with a dictionary:
+
+  ** pyxkcdpass -d /usr/share/dict/words
+  
+or provide a dictionary and a password length
+
+  ** pyxkcdpass -d /usr/share/dict/words -l 10

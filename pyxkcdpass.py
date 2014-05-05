@@ -25,16 +25,16 @@ class XKCDPass(object):
     def generate_random_password(self, length=None):
         with open(self.dictionary, 'r') as dictionary:
             return " ".join( map(str.strip, random.sample(dictionary.readlines(), length or self.length)) )
-    
 
 
-if __name__ == "__main__": # pragma: no cover
-
+def main(): # pragma: no cover
     usage = "pyxkcdpass.py [-h|--help] [-l|--length=<length>] [-d|--dictionary=<path>]"
 
     parser = OptionParser(usage=usage)
 
     default_dictionary = os.path.join(os.path.dirname(__file__), 'dictionary')
+    print(default_dictionary)
+    
     parser.add_option("-d", "--dictionary", dest="dictionary_path",
                       help="Specify a path to a dictionary", metavar="PATH", default=default_dictionary)
 
@@ -54,3 +54,8 @@ if __name__ == "__main__": # pragma: no cover
     
     print(xkcdpass.generate_random_password())
     
+
+
+
+if __name__ == "__main__": # pragma: no cover
+    main()

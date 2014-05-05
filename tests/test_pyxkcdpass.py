@@ -10,7 +10,7 @@ Tests for `pyxkcdpass` module.
 
 import unittest
 
-from pyxkcdpass.pyxkcdpass import XKCDPass
+from pyxkcdpass import XKCDPass
 
 
 class TestPyxkcdpass(unittest.TestCase):

@@ -10,6 +10,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
+
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
@@ -19,17 +20,13 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pyxkcdpass',
-    version='0.1.0',
+    version='0.2.0',
     description='This script provides a simple way to generate secure and human readable passwords, based on XKCD #936',
     long_description=readme + '\n\n' + history,
     author='Henrique Pereira',
     author_email='ikkibr@gmail.com',
     url='https://github.com/ikkebr/pyxkcdpass',
-    packages=[
-        'pyxkcdpass',
-    ],
-    package_dir={'pyxkcdpass':
-                 'pyxkcdpass'},
+    py_modules = ['pyxkcdpass'],
     include_package_data=True,
     install_requires=[
     ],
@@ -37,7 +34,7 @@ setup(
     zip_safe=False,
     keywords='pyxkcdpass',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
@@ -48,4 +45,5 @@ setup(
         'Programming Language :: Python :: 3.3',
     ],
     test_suite='tests',
+    entry_points={'console_scripts': ['pyxkcdpass = pyxkcdpass:main']}
 )
