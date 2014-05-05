@@ -33,8 +33,7 @@ def main(): # pragma: no cover
     parser = OptionParser(usage=usage)
 
     default_dictionary = os.path.join(os.path.dirname(__file__), 'dictionary')
-    print(default_dictionary)
-    
+
     parser.add_option("-d", "--dictionary", dest="dictionary_path",
                       help="Specify a path to a dictionary", metavar="PATH", default=default_dictionary)
 
