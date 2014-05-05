@@ -14,6 +14,7 @@
 import os
 import random
 from optparse import OptionParser
+from __future__ import print_function
 
 
 class XKCDPass(object):
@@ -51,5 +52,5 @@ if __name__ == "__main__": # pragma: no cover
 
     xkcdpass = XKCDPass(options.dictionary_path, options.password_length)
     
-    print xkcdpass.generate_random_password()
+    print(xkcdpass.generate_random_password())
     
