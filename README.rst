@@ -41,8 +41,8 @@ Usage
 
 Just call pyxckdpass and supply it with a dictionary:
 
-  ** pyxkcdpass -d /usr/share/dict/words
+  ** pyxkcdpass -d /usr/share/dict/words **
   
 or provide a dictionary and a password length
 
-  ** pyxkcdpass -d /usr/share/dict/words -l 10
+  ** pyxkcdpass -d /usr/share/dict/words -l 10 **
