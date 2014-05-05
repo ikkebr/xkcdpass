@@ -11,10 +11,10 @@
 # Default dictionary from http://www.englishclub.com/vocabulary/common-words-5000.htm
 #
 
+from __future__ import print_function
 import os
 import random
 from optparse import OptionParser
-from __future__ import print_function
 
 
 class XKCDPass(object):
