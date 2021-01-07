@@ -13,34 +13,42 @@
 
 import os
 import random
-from optparse import OptionParser
+import argparse
 
 
 class XKCDPass(object):
-    def __init__(self, dictionary='dictionary', length=4, *args, **kwargs):
+    def __init__(self, dictionary='dictionary', length=4, readable=True, *args, **kwargs):
         self.dictionary = dictionary
         self.length = length
+        self.separator = ""
+
+        if readable:
+            self.separator = " "
+
         
     def generate_random_password(self, length=None):
         with open(self.dictionary, 'r') as dictionary:
-            return " ".join( map(str.strip, random.sample(dictionary.readlines(), length or self.length)) )
+            possible_words = dictionary.readlines()
+            return self.separator.join( map(str.strip, random.sample(possible_words, min(length or self.length, len(possible_words))) ))
 
 
 def main():
-    usage = "pyxkcdpass.py [-h|--help] [-l|--length=<length>] [-d|--dictionary=<path>]"
-
-    parser = OptionParser(usage=usage)
+    
+    parser = argparse.ArgumentParser(description="Python tool that generates passwords like XKCD 936")
 
     default_dictionary = os.path.join(os.path.dirname(__file__), 'dictionary')
 
-    parser.add_option("-d", "--dictionary", dest="dictionary_path",
+    parser.add_argument("--dictionary", dest="dictionary_path",
                       help="Specify a path to a dictionary", metavar="PATH", default=default_dictionary)
 
-    parser.add_option("-l", "--length", dest="password_length", type="int",
+    parser.add_argument("--length", dest="password_length", type=int,
                       help="Specify the password length", metavar="LENGTH", default=4)
 
+    parser.add_argument("--readable", dest="password_readable", help="Outputs a readable password", default=False, action='store_true')
 
-    (options, args) = parser.parse_args()
+
+    options = parser.parse_args()
+    print(options)
 
     if options.password_length < 1:
         parser.error("Your password should contain at least 1 word.")
@@ -48,7 +56,7 @@ def main():
     if not os.path.isfile(options.dictionary_path):
         parser.error("I cannot find your dictionary file. Please make sure it is readable.")
 
-    xkcdpass = XKCDPass(options.dictionary_path, options.password_length)
+    xkcdpass = XKCDPass(options.dictionary_path, options.password_length, options.password_readable)
     
     print(xkcdpass.generate_random_password())
     
