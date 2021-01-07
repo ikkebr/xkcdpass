@@ -16,6 +16,7 @@ import random
 import argparse
 
 
+
 class XKCDPass(object):
     def __init__(self, dictionary='dictionary', length=4, readable=True, *args, **kwargs):
         self.dictionary = dictionary
@@ -32,9 +33,10 @@ class XKCDPass(object):
             return self.separator.join( map(str.strip, random.sample(possible_words, min(length or self.length, len(possible_words))) ))
 
 
+
 def main():
     
-    parser = argparse.ArgumentParser(description="Python tool that generates passwords like XKCD 936")
+    parser = argparse.ArgumentParser(description="Python script that generates passwords based on XKCD 936")
 
     default_dictionary = os.path.join(os.path.dirname(__file__), 'dictionary')
 

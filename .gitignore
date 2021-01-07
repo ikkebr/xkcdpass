@@ -1,1 +1,9 @@
 .vscode/settings.json
+.pytest_cache/v/cache/nodeids
+.pytest_cache/v/cache/stepwise
+__pycache__/__init__.cpython-36.pyc
+__pycache__/__init__.cpython-37.pyc
+__pycache__/pyxkcdpass.cpython-36.pyc
+__pycache__/pyxkcdpass.cpython-37.pyc
+__pycache__/test_readable.cpython-36-PYTEST.pyc
+__pycache__/test_readable.cpython-37-pytest-6.2.1.pyc
