@@ -50,8 +50,7 @@ def main():
 
 
     options = parser.parse_args()
-    print(options)
-
+    
     if options.password_length < 1:
         parser.error("Your password should contain at least 1 word.")
 
