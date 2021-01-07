@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # xkcdpass
@@ -11,7 +11,6 @@
 # Default dictionary from http://www.englishclub.com/vocabulary/common-words-5000.htm
 #
 
-from __future__ import print_function
 import os
 import random
 from optparse import OptionParser
@@ -27,7 +26,7 @@ class XKCDPass(object):
             return " ".join( map(str.strip, random.sample(dictionary.readlines(), length or self.length)) )
 
 
-def main(): # pragma: no cover
+def main():
     usage = "pyxkcdpass.py [-h|--help] [-l|--length=<length>] [-d|--dictionary=<path>]"
 
     parser = OptionParser(usage=usage)
@@ -56,5 +55,6 @@ def main(): # pragma: no cover
 
 
 
-if __name__ == "__main__": # pragma: no cover
+if __name__ == "__main__":
     main()
+

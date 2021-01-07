@@ -7,7 +7,8 @@ Development Lead
 
 * Henrique Pereira <ikkibr@gmail.com>
 
-Contributors
+Minimal Fork
 ------------
 
-None yet. Why not be the first?
+* Some guy who doesn't like bloat, especially for trivial software.
+
